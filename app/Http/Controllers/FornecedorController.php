@@ -43,6 +43,18 @@ class FornecedorController extends Controller
             ->with('success', 'Fornecedor cadastrado com sucesso.');
     }
 
+    public function edit(int $id){
+        $fornecedor = Fornecedor::findOrFail($id);
+
+        return view('admin.fornecedores.edit', compact('fornecedor'));
+    }
+
+    public function update(FornecedorRequest $request, int $id){
+        $this->fornecedorService->update($request->validated(), $id);
+        return redirect()->route('admin.fornecedores.index')
+            ->with('success', 'Fornecedor cadastrado com sucesso.');
+    }
+
     public function destroy(int $id){
         $fornecedor = Fornecedor::findOrFail($id);
         

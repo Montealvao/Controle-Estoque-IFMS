@@ -42,4 +42,12 @@ class FornecedorController extends Controller
         return redirect()->route('admin.fornecedores.index')
             ->with('success', 'Fornecedor cadastrado com sucesso.');
     }
+
+    public function destroy(int $id){
+        $fornecedor = Fornecedor::findOrFail($id);
+        
+        $fornecedor->delete();
+
+        return redirect()->route('admin.fornecedores.index')->with('success', 'Fornecedor removido com sucesso.');
+    }
 }

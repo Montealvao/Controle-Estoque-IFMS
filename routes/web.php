@@ -11,6 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
     ->name('admin.fornecedores.index');
 
@@ -19,6 +20,9 @@ Route::get('/fornecedores/novo', [FornecedorController::class, 'create'])
 
 Route::post('/fornecedores', [FornecedorController::class, 'store'])
     ->name('admin.fornecedores.store');
+
+Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
+    ->name('admin.fornecedores.destroy');
 
 /* ============================================================
    Área do Administrador

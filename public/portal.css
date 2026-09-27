@@ -1,0 +1,514 @@
+/* ============================================================
+   Portal CPF — Estilos Globais
+   ============================================================ */
+
+/* ============================================================
+   VARIÁVEIS
+   ============================================================ */
+:root {
+    --portal-primary: #1e40af;
+    --portal-secondary: #1e3a5f;
+    --portal-accent: #3b82f6;
+    --portal-sidebar-w: 260px;
+    --portal-topbar-h: 64px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body.portal-body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.portal-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.portal-sidebar {
+    width: var(--portal-sidebar-w);
+    min-height: 100vh;
+    background: var(--portal-secondary);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    transition: width .2s ease, left .25s ease;
+}
+
+.portal-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.portal-topbar {
+    height: var(--portal-topbar-h);
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.portal-content {
+    flex: 1;
+    padding: 1.75rem;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--portal-accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.brand-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    color: #94a3b8;
+    font-size: .7rem;
+    line-height: 1;
+}
+
+.sidebar-section-label {
+    color: #64748b;
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: .5rem 1rem .25rem;
+}
+
+.sidebar-nav {
+    padding: .25rem .5rem;
+    flex: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: .625rem;
+    padding: .55rem .75rem;
+    border-radius: 8px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: .875rem;
+    font-weight: 500;
+    transition: background .15s ease, color .15s ease;
+    margin-bottom: 2px;
+}
+
+.sidebar-link i {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+}
+
+.sidebar-link.active {
+    background: var(--portal-accent);
+    color: #fff;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+/* ============================================================
+   SIDEBAR COLLAPSED
+   ============================================================ */
+.portal-wrapper.sidebar-collapsed .portal-sidebar {
+    width: 72px;
+}
+
+.portal-wrapper.sidebar-collapsed .brand-title,
+.portal-wrapper.sidebar-collapsed .brand-subtitle,
+.portal-wrapper.sidebar-collapsed .sidebar-section-label,
+.portal-wrapper.sidebar-collapsed .sidebar-link span,
+.portal-wrapper.sidebar-collapsed .sidebar-footer .lh-sm,
+.portal-wrapper.sidebar-collapsed .sidebar-footer button span {
+    display: none;
+}
+
+.portal-wrapper.sidebar-collapsed .sidebar-link,
+.portal-wrapper.sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+}
+
+.portal-wrapper.sidebar-collapsed .sidebar-footer {
+    text-align: center;
+}
+
+.portal-wrapper.sidebar-collapsed .sidebar-footer form button {
+    padding: .5rem;
+}
+
+.portal-wrapper.sidebar-collapsed .sidebar-footer form button i {
+    margin: 0 !important;
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    color: #64748b;
+    margin: .25rem 0 0;
+    font-size: .875rem;
+}
+
+/* ============================================================
+   CARDS DE ESTATÍSTICA
+   ============================================================ */
+.stat-card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card--blue {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+.stat-card--green {
+    background: linear-gradient(135deg, #065f46, #10b981);
+}
+
+.stat-card--orange {
+    background: linear-gradient(135deg, #92400e, #f59e0b);
+}
+
+.stat-card--red {
+    background: linear-gradient(135deg, #7f1d1d, #ef4444);
+}
+
+.stat-icon {
+    font-size: 1.75rem;
+    opacity: .6;
+    margin-bottom: .5rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: .25rem;
+}
+
+.stat-label {
+    font-size: .8rem;
+    opacity: .85;
+    font-weight: 500;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.portal-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+}
+
+.portal-card .card-header {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: .875rem 1.25rem;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* ============================================================
+   AVATARS
+   ============================================================ */
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--portal-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .875rem;
+    flex-shrink: 0;
+}
+
+.avatar-circle.avatar-sm {
+    width: 30px;
+    height: 30px;
+    font-size: .75rem;
+}
+
+.avatar-circle.avatar-lg {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+}
+
+.avatar-circle.avatar-xl {
+    width: 72px;
+    height: 72px;
+    font-size: 1.75rem;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn-ghost {
+    background: transparent;
+    border: none;
+    padding: .25rem .5rem;
+    border-radius: 6px;
+    color: #64748b;
+    transition: background .15s ease, color .15s ease;
+}
+
+.btn-ghost:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.btn-login {
+    padding: .75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--portal-primary);
+    border-color: var(--portal-primary);
+}
+
+.btn-login:hover {
+    background: #1e3a8a;
+    border-color: #1e3a8a;
+}
+
+/* ============================================================
+   TABELAS
+   ============================================================ */
+.table> :not(caption)>*>* {
+    padding: .75rem 1rem;
+    vertical-align: middle;
+}
+
+.table thead th {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #64748b;
+}
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+.login-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-left {
+    flex: 0 0 45%;
+    background: linear-gradient(160deg,
+            var(--portal-secondary) 0%,
+            var(--portal-primary) 60%,
+            #3b82f6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    color: #fff;
+}
+
+.login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #f8fafc;
+}
+
+.login-brand {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.brand-icon-lg {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    color: #fff;
+    margin: 0 auto 1rem;
+}
+
+.login-brand-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: .5rem 0 .25rem;
+}
+
+.login-brand-sub {
+    opacity: .8;
+    font-size: .95rem;
+}
+
+.login-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    font-size: .95rem;
+    opacity: .9;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* ============================================================
+   FICHA
+   ============================================================ */
+.ficha-header {
+    border-radius: 12px 12px 0 0;
+}
+
+/* ============================================================
+   RELATÓRIOS
+   ============================================================ */
+.chart-bars {
+    height: 220px;
+}
+
+.chart-bar {
+    min-height: 4px;
+    transition: height .3s ease;
+}
+
+.chart-bar--active {
+    background: var(--portal-primary);
+}
+
+.chart-bar--empty {
+    background: #e2e8f0;
+}
+
+.progress-thin {
+    height: 8px;
+}
+
+.text-label-small {
+    font-size: .85rem;
+}
+
+.text-label-xs {
+    font-size: .7rem;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 991px) {
+    .portal-sidebar {
+        position: fixed;
+        left: calc(-1 * var(--portal-sidebar-w));
+        top: 0;
+        z-index: 1040;
+    }
+
+    .portal-sidebar.open {
+        left: 0;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        padding: 1rem;
+    }
+
+    .portal-content {
+        padding: 1rem;
+    }
+}

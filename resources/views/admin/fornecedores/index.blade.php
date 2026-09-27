@@ -112,11 +112,16 @@
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
 
-                                    <a href=""
-                                        class="btn btn-sm btn-ghost text-danger"
-                                        title="Excluir">
-                                        <i class="bi bi-trash3-fill"></i>
-                                    </a>
+                                    <form action="{{ route('admin.fornecedores.destroy', $fornecedor->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            class="btn btn-sm btn-ghost text-danger"
+                                            title="Excluir"
+                                            type="submit">
+                                            <i class="bi bi-trash3-fill"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

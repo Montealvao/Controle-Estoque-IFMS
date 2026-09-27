@@ -17,6 +17,7 @@
             <p class="page-subtitle">Registros de Fornecedores</p>
         </div>
 
+        <a href="/" class="btn btn-secondary">Voltar ao Início</a>
         <a href="/fornecedores/novo" class="btn btn-primary">
             <i class="bi bi-plus-square-fill me-2"></i>
             Novo Fornecedor
@@ -106,11 +107,14 @@
 
                             <td class="text-center">
                                 <div class="d-flex justify-content-center gap-1">
-                                    <a href=""
-                                        class="btn btn-sm btn-ghost"
-                                        title="Editar">
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </a>
+                                    <form action="{{ route('admin.fornecedores.edit', $fornecedor->id) }}" method="get">
+                                        <button
+                                            class="btn btn-sm btn-ghost"
+                                            title="Editar"
+                                            type="submit">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </button>
+                                    </form>
 
                                     <form action="{{ route('admin.fornecedores.destroy', $fornecedor->id) }}" method="post">
                                         @csrf

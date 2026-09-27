@@ -12,7 +12,13 @@ Route::get('/', function () {
 });
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
-    ->name('fornecedores.index');
+    ->name('admin.fornecedores.index');
+
+Route::get('/fornecedores/novo', [FornecedorController::class, 'create'])
+    ->name('admin.fornecedores.create');
+
+Route::post('/fornecedores', [FornecedorController::class, 'store'])
+    ->name('admin.fornecedores.store');
 
 /* ============================================================
    Área do Administrador

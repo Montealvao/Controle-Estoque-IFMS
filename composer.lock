@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53b5d56b3b7e3cbac1713e68c8850f6c",
+    "content-hash": "fcb0cbe9a86123ede5b5e9a4b95e4a6c",
     "packages": [
         {
             "name": "brick/math",
@@ -5867,6 +5867,66 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.4.0"
             },
             "time": "2025-12-02T11:56:42+00:00"
+        },
+        {
+            "name": "usinatech/br-validator",
+            "version": "v13.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/usinatech/br-validator.git",
+                "reference": "c26ceb7e2d1ada53e63c929f3a9885ccfbfbedc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/usinatech/br-validator/zipball/c26ceb7e2d1ada53e63c929f3a9885ccfbfbedc4",
+                "reference": "c26ceb7e2d1ada53e63c929f3a9885ccfbfbedc4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^10.0|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "UsinaTech\\BrValidator\\ValidatorProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "UsinaTech\\BrValidator\\": "src/br-validator"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alcimar Carlos de Lemos Vasconcelos e Aires",
+                    "email": "alcimar@usina.tech"
+                }
+            ],
+            "description": "Uma biblioteca de validacoes brasileiras para Laravel.",
+            "homepage": "https://github.com/UsinaTech/br-validator",
+            "keywords": [
+                "brasil",
+                "cnpj",
+                "cpf",
+                "laravel",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/UsinaTech/br-validator/issues",
+                "source": "https://github.com/UsinaTech/br-validator"
+            },
+            "time": "2026-05-21T09:30:47+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

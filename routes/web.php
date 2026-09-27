@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FornecedorController;
 use Illuminate\Support\Facades\Route;
 
 /* ============================================================
@@ -10,6 +11,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/fornecedores', [FornecedorController::class, 'index'])
+    ->name('fornecedores.index');
 
 /* ============================================================
    Área do Administrador

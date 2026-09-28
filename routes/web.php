@@ -8,12 +8,19 @@ use Illuminate\Support\Facades\Route;
 /* ============================================================
    Autenticação
    ============================================================ */
-    //rotas de autenticação
+//rotas de autenticação
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
+Route::get('/produtos', [ProdutoController::class, 'index'])
+    ->name('produtos.index');
+
+Route::get('/produtos/novo', [ProdutoController::class, 'create'])
+    ->name('produtos.novo');
+
+Route::post('/produtos/store', [ProdutoController::class, 'store'])
+    ->name('produtos.store');
 
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])

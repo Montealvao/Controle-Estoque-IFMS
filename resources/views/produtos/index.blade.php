@@ -18,7 +18,7 @@
         </div>
 
         <a href="/" class="btn btn-secondary">Voltar ao Início</a>
-        <a href="" class="btn btn-primary">
+        <a href="{{ route('produtos.novo') }}" class="btn btn-primary">
             <i class="bi bi-plus-square-fill me-2"></i>
             Novo produto
         </a>
@@ -51,7 +51,7 @@
                             </td>
 
                             <td class="font-monospace fw-semibold">
-                                {{ $produto->nome }}
+                                {{ $produto->nome}}
                             </td>
 
                             <td>
@@ -60,11 +60,11 @@
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->qtde_estoque}}
+                                {{ $produto->qtde_estoque }}
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->codigo_barras}}
+                                {{ $produto->codigo_barra }}
                             </td>
 
                             <td class="text-muted">
@@ -76,15 +76,15 @@
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->categoria}}
+                                {{ $produto->categoria }}
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->qtde_minima}}
+                                {{ $produto->qtde_minima }}
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->qtde_maxima}}
+                                {{ $produto->qtde_maxima }}
                             </td>
 
                             <td class="text-center">

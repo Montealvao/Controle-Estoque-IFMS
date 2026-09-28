@@ -24,7 +24,6 @@ class CategoriaRequest extends FormRequest
             'margem_lucro' => [
                 'required',
                 'numeric',
-                'decimal:2',
             ],
         ];
     }

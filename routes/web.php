@@ -34,13 +34,13 @@ Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
 Route::get('/categorias', [CategoriaController::class, 'index'])
     ->name('categorias.index');
 
-Route::get('/categoria/novo', [CategoriaController::class, 'create'])
+Route::get('/categorias/novo', [CategoriaController::class, 'create'])
     ->name('categorias.create');
 
 Route::post('/categorias', [CategoriaController::class, 'store'])
     ->name('categorias.store');
 
-Route::get('/categoria/edit/{id}', [CategoriaController::class, 'edit'])
+Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit'])
     ->name('categorias.edit'); 
 
 Route::put('/categorias/{id}', [CategoriaController::class, 'update'])

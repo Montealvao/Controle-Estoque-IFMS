@@ -23,7 +23,7 @@ class CategoriaController extends Controller
 
     public function create()
     {
-        return view('categoria.create');
+        return view('categorias.create');
     }
 
 
@@ -54,6 +54,6 @@ class CategoriaController extends Controller
     {
         $this->categoriaService->delete($id);
         return redirect()->route('categorias.index')
-            - with('success', 'Categoria excluido com sucesso.');
+            -> with('success', 'Categoria excluido com sucesso.');
     }
 }

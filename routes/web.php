@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
 
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])

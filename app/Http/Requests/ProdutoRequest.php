@@ -24,6 +24,7 @@ class ProdutoRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'unique:produtos', 'min:3', 'max:100'],
+            'embalagem' => ['string'],
             'qtde_estoque' => ['integer'],
             'codigo_barra' => ['required', 'unique:produtos', 'size:13'],
             'valor_compra' => ['required', 'numeric', 'min:0'],

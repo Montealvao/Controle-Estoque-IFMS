@@ -13,10 +13,16 @@ class CategoriaService
             'margem_lucro'->$request['margem_lucro'],
         ]);
     }
-    public function update()
+   public function update(array $request, int  $id): bool
     {
+        $categoria = Categoria::findOrFail($id);
 
+        return $categoria->update([
+            'nome' => $request['nome'],
+            'margem_lucro' => $request['margem_lucro'],
+        ]);
     }
+    
     public function delete()
     {
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\CategoriaService;
 use App\Models\Categoria;
+use App\Http\Requests\CategoriaRequest;
 
 
 class CategoriaController extends Controller
@@ -22,12 +23,15 @@ class CategoriaController extends Controller
 
     public function create()
     {
-
+    return view('categoria.create');
     }
 
 
-    public function store()
+    public function store(CategoriaRequest $request)
     {
+        $this->categoriaService->create($request->validated());
+        return redirect()->route('categorias.index')
+            ->with('success', 'Categoria cadastrado com sucesso.');
     }
 
     public function edit()

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 /* ============================================================
    Autenticação
    ============================================================ */
-    //rotas de autenticação
+//rotas de autenticação
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,6 +33,13 @@ Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
 
 Route::get('/categorias', [CategoriaController::class, 'index'])
     ->name('categorias.index');
+
+Route::get('/categoria/novo', [CategoriaController::class, 'create'])
+    ->name('categorias.create');
+
+Route::post('/categorias', [CategoriaController::class, 'store'])
+    ->name('categorias.store');
+
 /* ============================================================
    Área do Administrador
    ============================================================ */

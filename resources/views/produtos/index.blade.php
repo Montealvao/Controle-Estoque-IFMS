@@ -89,7 +89,7 @@
 
                             <td class="text-center">
                                 <div class="d-flex justify-content-center gap-1">
-                                    <form action="" method="get">
+                                    <form action="{{ route('produtos.edit', $produto->id) }}" method="get">
                                         <button class="btn btn-sm btn-ghost" title="Editar" type="submit">
                                             <i class="bi bi-pencil-fill"></i>
                                         </button>

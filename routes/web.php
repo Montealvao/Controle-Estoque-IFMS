@@ -22,6 +22,12 @@ Route::get('/produtos/novo', [ProdutoController::class, 'create'])
 Route::post('/produtos/store', [ProdutoController::class, 'store'])
     ->name('produtos.store');
 
+Route::get('/produtos/{id}/editar', [ProdutoController::class, 'edit'])
+    ->name('produtos.edit');
+
+Route::put('/produtos/{id}', [ProdutoController::class, 'update'])
+    ->name('produtos.update');
+
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
     ->name('admin.fornecedores.index');

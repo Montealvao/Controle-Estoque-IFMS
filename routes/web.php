@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::put('/fornecedores/{id}', [FornecedorController::class, 'update'])
 Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
     ->name('admin.fornecedores.destroy');
 
+Route::get('/categorias', [CategoriaController::class, 'index'])
+    ->name('categorias.index');
 /* ============================================================
    Área do Administrador
    ============================================================ */

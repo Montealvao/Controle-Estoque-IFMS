@@ -51,6 +51,9 @@
                             <a href="/fornecedores" class="btn btn-primary">
                                 Acessar fluxo de Fornecedor
                             </a>
+                            <a href="{{ route('produtos.index') }}" class="btn btn-primary mt-3">
+                                Acessar fluxo de Produtos
+                            </a>
 
                         </div>
                     </div>

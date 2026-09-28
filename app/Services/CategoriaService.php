@@ -13,7 +13,7 @@ class CategoriaService
             'margem_lucro'->$request['margem_lucro'],
         ]);
     }
-   public function update(array $request, int  $id): bool
+    public function update(array $request, int $id): bool
     {
         $categoria = Categoria::findOrFail($id);
 
@@ -22,9 +22,11 @@ class CategoriaService
             'margem_lucro' => $request['margem_lucro'],
         ]);
     }
-    
-    public function delete()
-    {
 
+    public function delete(int $id)
+    {
+        $categoria = Categoria::findOrFail($id);
+
+        $categoria->delete();
     }
 }

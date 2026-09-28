@@ -50,8 +50,10 @@ class CategoriaController extends Controller
 
 
 
-    public function destroy()
+    public function destroy(int $id)
     {
-
+        $this->categoriaService->delete($id);
+        return redirect()->route('categorias.index')
+            - with('success', 'Categoria excluido com sucesso.');
     }
 }

@@ -46,6 +46,8 @@ Route::get('/categoria/edit/{id}', [CategoriaController::class, 'edit'])
 Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
     ->name('categorias.update');   
 
+Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])
+    ->name('categorias.destroy'); 
 /* ============================================================
    Área do Administrador
    ============================================================ */

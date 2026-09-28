@@ -76,7 +76,7 @@
                             </td>
 
                             <td class="text-muted">
-                                {{ $produto->categoria }}
+                                {{ $produto->categoria->nome }}
                             </td>
 
                             <td class="text-muted">
@@ -95,7 +95,7 @@
                                         </button>
                                     </form>
 
-                                    <form action="" method="post">
+                                    <form action="{{ route('produtos.destroy', $produto->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-ghost text-danger" title="Excluir" type="submit">

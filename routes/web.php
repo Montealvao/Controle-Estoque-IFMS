@@ -29,6 +29,8 @@ Route::get('/produtos/{id}/editar', [ProdutoController::class, 'edit'])
 Route::put('/produtos/{id}', [ProdutoController::class, 'update'])
     ->name('produtos.update');
 
+Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])
+    ->name('produtos.destroy');
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
     ->name('admin.fornecedores.index');
@@ -58,13 +60,13 @@ Route::post('/categorias', [CategoriaController::class, 'store'])
     ->name('categorias.store');
 
 Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit'])
-    ->name('categorias.edit'); 
+    ->name('categorias.edit');
 
 Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
-    ->name('categorias.update');   
+    ->name('categorias.update');
 
 Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])
-    ->name('categorias.destroy'); 
+    ->name('categorias.destroy');
 /* ============================================================
    Área do Administrador
    ============================================================ */

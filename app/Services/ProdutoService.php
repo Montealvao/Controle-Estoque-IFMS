@@ -37,4 +37,10 @@ class ProdutoService
             'qtde_maxima' => $request['qtde_maxima']
         ]);
     }
+
+    public function delete(int $id)
+    {
+        $produto = Produto::findOrFail($id);
+        $produto->delete();
+    }
 }

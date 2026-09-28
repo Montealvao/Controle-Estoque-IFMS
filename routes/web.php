@@ -14,7 +14,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::get('/produtos', [ProdutoController::class, 'index'])
+    ->name('produtos.index');
+
+Route::get('/produtos/novo', [ProdutoController::class, 'create'])
+    ->name('produtos.novo');
+
+Route::post('/produtos/store', [ProdutoController::class, 'store'])
+    ->name('produtos.store');
+
+Route::get('/produtos/{id}/editar', [ProdutoController::class, 'edit'])
+    ->name('produtos.edit');
+
+Route::put('/produtos/{id}', [ProdutoController::class, 'update'])
+    ->name('produtos.update');
 
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])

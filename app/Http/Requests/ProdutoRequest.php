@@ -23,9 +23,10 @@ class ProdutoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => ['required', 'unique:produtos', 'min:3', 'max:100'],
+            'nome' => ['required', 'min:3', 'max:100'],
+            'embalagem' => ['string'],
             'qtde_estoque' => ['integer'],
-            'codigo_barra' => ['required', 'unique:produtos', 'size:13'],
+            'codigo_barra' => ['required', 'size:13'],
             'valor_compra' => ['required', 'numeric', 'min:0'],
             'valor_venda' => ['required', 'numeric', 'min:0'],
             'categoria_id' => ['exists:App\Models\Categoria,id'],

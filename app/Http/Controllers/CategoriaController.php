@@ -23,7 +23,7 @@ class CategoriaController extends Controller
 
     public function create()
     {
-    return view('categoria.create');
+        return view('categoria.create');
     }
 
 
@@ -34,16 +34,18 @@ class CategoriaController extends Controller
             ->with('success', 'Categoria cadastrado com sucesso.');
     }
 
-    public function edit()
+    public function edit(int $id)
     {
-
-
+        $categoria = Categoria::findOrFail($id);
+        return view('categorias.edit', compact('categoria'));
     }
 
 
-    public function update()
+    public function update(CategoriaRequest $request, int $id)
     {
-
+        $this->categoriaService->update($request->validated(), $id);
+        return redirect()->route('categorias.index')
+            ->with('success', 'Categoria editado com sucesso.');
     }
 
 

@@ -40,6 +40,12 @@ Route::get('/categoria/novo', [CategoriaController::class, 'create'])
 Route::post('/categorias', [CategoriaController::class, 'store'])
     ->name('categorias.store');
 
+Route::get('/categoria/edit/{id}', [CategoriaController::class, 'edit'])
+    ->name('categorias.edit'); 
+
+Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
+    ->name('categorias.update');   
+
 /* ============================================================
    Área do Administrador
    ============================================================ */

@@ -39,14 +39,18 @@ class ProdutoController extends Controller
         //
     }
 
-    public function edit(Produto $produto)
+    public function edit(int $id)
     {
-        //
+        $categorias = Categoria::orderBy('name')->get();
+        $produto = Produto::findOrFail($id);
+
+        return view('produtos.edit', compact('produto', 'categorias'));
     }
 
-    public function update(Request $request, Produto $produto)
+    public function update(ProdutoRequest $request, int $id)
     {
-        //
+         $this->produtoService->update($request->validated(), $id);
+        return redirect()->route('produtos.index');
     }
 
     public function destroy(Produto $produto)

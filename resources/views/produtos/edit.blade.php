@@ -13,32 +13,20 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-nav">
-                <a class="nav-link" href="{{ route('produtos.index')}}">
-                    Listar produtos
+                <a class="nav-link" href="{{ route('produtos.novo') }}">
+                    Novo Produto
+                </a>
+
+                <a class="nav-link" href="{{ route('produtos.index') }}">
+                    Listar
                 </a>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-4">
-
-        <h1>
-            Cadastrar produto.
-        </h1>
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <h6 class="alert-heading fw-bold mb-1">Atenção! Verifique os seguintes erros:</h6>
-                <ul class="mb-0">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form action="{{ route('produtos.store') }}" method="post">
+        <form action="{{ route('produtos.update', $produto->id) }}" method="post">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label class="form-label">
                     Nome
@@ -111,8 +99,7 @@
                 </label>
                 <input type="number" name="qtde_maxima" class="form-control">
             </div>
-     
-            <!-- 4. Substitua o botão Gravar por: -->
+
             <button type="submit" class="btn btn-primary">
                 Salvar
             </button>

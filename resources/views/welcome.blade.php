@@ -51,6 +51,9 @@
                             <a href="/fornecedores" class="btn btn-primary">
                                 Acessar fluxo de Fornecedor
                             </a>
+                            <a href="/categorias" class="btn btn-primary">
+                                Acessar fluxo de Categorias
+                            </a>
 
                         </div>
                     </div>
@@ -69,3 +72,4 @@
 </body>
 
 </html>
+```

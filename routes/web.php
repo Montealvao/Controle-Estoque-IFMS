@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
 use Illuminate\Support\Facades\Route;
 
 /* ============================================================
    Autenticação
    ============================================================ */
-    //rotas de autenticação
+//rotas de autenticação
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,6 +31,23 @@ Route::put('/fornecedores/{id}', [FornecedorController::class, 'update'])
 Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
     ->name('admin.fornecedores.destroy');
 
+Route::get('/categorias', [CategoriaController::class, 'index'])
+    ->name('categorias.index');
+
+Route::get('/categorias/novo', [CategoriaController::class, 'create'])
+    ->name('categorias.create');
+
+Route::post('/categorias', [CategoriaController::class, 'store'])
+    ->name('categorias.store');
+
+Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit'])
+    ->name('categorias.edit'); 
+
+Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
+    ->name('categorias.update');   
+
+Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])
+    ->name('categorias.destroy'); 
 /* ============================================================
    Área do Administrador
    ============================================================ */

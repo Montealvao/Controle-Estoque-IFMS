@@ -5,6 +5,7 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+.php-preview-router.php
 /.fleet
 /.idea
 /.nova

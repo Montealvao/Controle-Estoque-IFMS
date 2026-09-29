@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
 use Illuminate\Support\Facades\Route;
@@ -8,46 +9,14 @@ use Illuminate\Support\Facades\Route;
    Autenticação
    ============================================================ */
 //rotas de autenticação
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'showLogin']);
 
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/fornecedores', [FornecedorController::class, 'index'])
-    ->name('admin.fornecedores.index');
+Route::get('/painel')->name('painel');
 
-Route::get('/fornecedores/novo', [FornecedorController::class, 'create'])
-    ->name('admin.fornecedores.create');
-
-Route::post('/fornecedores', [FornecedorController::class, 'store'])
-    ->name('admin.fornecedores.store');
-
-Route::get('/fornecedores/{id}/editar', [FornecedorController::class, 'edit'])
-    ->name('admin.fornecedores.edit');
-
-Route::put('/fornecedores/{id}', [FornecedorController::class, 'update'])
-    ->name('admin.fornecedores.update');
-
-Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])
-    ->name('admin.fornecedores.destroy');
-
-Route::get('/categorias', [CategoriaController::class, 'index'])
-    ->name('categorias.index');
-
-Route::get('/categorias/novo', [CategoriaController::class, 'create'])
-    ->name('categorias.create');
-
-Route::post('/categorias', [CategoriaController::class, 'store'])
-    ->name('categorias.store');
-
-Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit'])
-    ->name('categorias.edit'); 
-
-Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
-    ->name('categorias.update');   
-
-Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])
-    ->name('categorias.destroy'); 
 /* ============================================================
    Área do Administrador
    ============================================================ */
@@ -55,7 +24,42 @@ Route::middleware(['auth', 'perfil:admin'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
-        //rotas admin
+
+        Route::get('/fornecedores', [FornecedorController::class, 'index'])
+            ->name('fornecedores.index');
+
+        Route::get('/fornecedor/novo', [FornecedorController::class, 'create'])
+            ->name('fornecedor.criar');
+
+        Route::post('/fornecedor', [FornecedorController::class, 'store'])
+            ->name('fornecedor.gravar');
+
+        Route::get('/fornecedor/editar/{id}', [FornecedorController::class, 'edit'])
+            ->name('fornecedor.editar');
+
+        Route::put('/fornecedor/{id}', [FornecedorController::class, 'update'])
+            ->name('fornecedor.atualizar');
+
+        Route::delete('/fornecedor/{id}', [FornecedorController::class, 'destroy'])
+            ->name('fornecedor.excluir');
+
+        Route::get('/categorias', [CategoriaController::class, 'index'])
+            ->name('categorias.index');
+
+        Route::get('/categoria/novo', [CategoriaController::class, 'create'])
+            ->name('categoria.criar');
+
+        Route::post('/categoria', [CategoriaController::class, 'store'])
+            ->name('categoria.gravar');
+
+        Route::get('/categoria/editar/{id}', [CategoriaController::class, 'edit'])
+            ->name('categoria.editar');
+
+        Route::put('/categoria/{id}', [CategoriaController::class, 'update'])
+            ->name('categorias.atualizar');
+
+        Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])
+            ->name('categorias.excluir');
     });
 
 /* ============================================================

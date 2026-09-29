@@ -14,7 +14,7 @@ class FornecedorController extends Controller
     ) {}
 
     public function index(Request $request)
-    {
+    {   
         $busca = $request->busca;
 
         $fornecedores = Fornecedor::query()

@@ -54,6 +54,9 @@
                             <a href="/categorias" class="btn btn-primary">
                                 Acessar fluxo de Categorias
                             </a>
+                            <a href="/produtos" class="btn btn-primary">
+                                Acessar fluxo de Produtos
+                            </a>
 
                         </div>
                     </div>

@@ -76,9 +76,6 @@
 
                 <select class="form-select" id="categoria_id" name="categoria_id" required>
                     <option value="">Selecione uma categoria...</option>
-                    <option value="1">
-                        categoria lixo
-                    </option>
                     @foreach($categorias as $categoria)
                         <option value="{{ $categoria->id }}" {{ old('categoria_id', $produto->categoria_id ?? '') == $categoria->id ? 'selected' : '' }}>
                             {{ $categoria->nome }}
@@ -91,13 +88,13 @@
                 <label class="form-label">
                     Quantidade mínima
                 </label>
-                <input type="number" name="qtde_minima" class="form-control">
+                <input type="number" name="qtde_minima" class="form-control" value="{{ old('qtde_minima', $produto->qtde_minima ?? '') }}">
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     Quantidade máxima
                 </label>
-                <input type="number" name="qtde_maxima" class="form-control">
+                <input type="number" name="qtde_maxima" class="form-control" value="{{ old('qtde_maxima', $produto->qtde_maxima ?? '') }}">
             </div>
 
             <button type="submit" class="btn btn-primary">

@@ -24,7 +24,7 @@ class ProdutoController extends Controller
 
     public function create()
     {
-        $categorias = Categoria::orderBy('name')->get();
+        $categorias = Categoria::orderBy('nome')->get();
         return view('produtos.create', compact('categorias'));
     }
 
@@ -34,14 +34,9 @@ class ProdutoController extends Controller
         return redirect()->route('produtos.index');
     }
 
-    public function show(Produto $produto)
-    {
-        //
-    }
-
     public function edit(int $id)
     {
-        $categorias = Categoria::orderBy('name')->get();
+        $categorias = Categoria::orderBy('nome')->get();
         $produto = Produto::findOrFail($id);
 
         return view('produtos.edit', compact('produto', 'categorias'));
@@ -49,12 +44,13 @@ class ProdutoController extends Controller
 
     public function update(ProdutoRequest $request, int $id)
     {
-         $this->produtoService->update($request->validated(), $id);
+        $this->produtoService->update($request->validated(), $id);
         return redirect()->route('produtos.index');
     }
 
-    public function destroy(Produto $produto)
+    public function destroy(int $id)
     {
-        //
+        $this->produtoService->delete($id);
+        return redirect()->route('produtos.index');
     }
 }

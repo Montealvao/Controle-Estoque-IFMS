@@ -88,9 +88,6 @@
 
                 <select class="form-select" id="categoria_id" name="categoria_id" required>
                     <option value="">Selecione uma categoria...</option>
-                    <option value="1">
-                        categoria lixo
-                    </option>
                     @foreach($categorias as $categoria)
                         <option value="{{ $categoria->id }}" {{ old('categoria_id', $produto->categoria_id ?? '') == $categoria->id ? 'selected' : '' }}>
                             {{ $categoria->nome }}

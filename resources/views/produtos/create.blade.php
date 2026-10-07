@@ -37,7 +37,7 @@
             </div>
         @endif
 
-        <form action="{{ route('produto.store') }}" method="post">
+        <form action="{{ route('produto.gravar') }}" method="post">
             @csrf
             <div class="mb-3">
                 <label class="form-label">

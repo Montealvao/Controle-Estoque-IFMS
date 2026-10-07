@@ -20,17 +20,17 @@ Route::get('/produtos', [ProdutoController::class, 'index'])
 Route::get('/produtos/novo', [ProdutoController::class, 'create'])
     ->name('produto.novo');
 
-Route::post('/produtos/store', [ProdutoController::class, 'store'])
-    ->name('produto.store');
+Route::post('/produtos/gravar', [ProdutoController::class, 'store'])
+    ->name('produto.gravar');
 
-Route::get('/produtos/{id}/editar', [ProdutoController::class, 'edit'])
-    ->name('produto.edit');
+Route::get('/produtos/editar/{id}', [ProdutoController::class, 'edit'])
+    ->name('produto.editar');
 
 Route::put('/produtos/{id}', [ProdutoController::class, 'update'])
-    ->name('produto.update');
+    ->name('produto.atualizar');
 
 Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])
-    ->name('produto.destroy');
+    ->name('produto.excluir');
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
     ->name('admin.fornecedores.index');

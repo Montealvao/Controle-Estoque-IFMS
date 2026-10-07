@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-nav">
-                <a class="nav-link" href="{{ route('produtos.novo') }}">
+                <a class="nav-link" href="{{ route('produto.novo') }}">
                     Novo Produto
                 </a>
 
@@ -24,7 +24,7 @@
         </div>
     </nav>
 
-        <form action="{{ route('produtos.update', $produto->id) }}" method="post">
+        <form action="{{ route('produto.atualizar', $produto->id) }}" method="post">
             @csrf
             @method('PUT')
             <div class="mb-3">

@@ -89,13 +89,13 @@
 
                             <td class="text-center">
                                 <div class="d-flex justify-content-center gap-1">
-                                    <form action="{{ route('produto.edit', $produto->id) }}" method="get">
+                                    <form action="{{ route('produto.editar', $produto->id) }}" method="get">
                                         <button class="btn btn-sm btn-ghost" title="Editar" type="submit">
                                             <i class="bi bi-pencil-fill"></i>
                                         </button>
                                     </form>
 
-                                    <form action="{{ route('produto.destroy', $produto->id) }}" method="post">
+                                    <form action="{{ route('produto.excluir', $produto->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-ghost text-danger" title="Excluir" type="submit">

@@ -30,8 +30,8 @@ class ProdutoRequest extends FormRequest
             'valor_compra' => ['required', 'numeric', 'min:0'],
             'valor_venda' => ['required', 'numeric', 'min:0'],
             'categoria_id' => ['exists:App\Models\Categoria,id'],
-            'qtde_minima' => ['nullable', 'integer'],
-            'qtde_maxima' => ['nullable', 'integer']
+            'qtde_minima' => ['required', 'integer'],
+            'qtde_maxima' => ['required', 'integer']
 
         ];
     }
@@ -61,8 +61,11 @@ class ProdutoRequest extends FormRequest
             'categoria_id.exists' => 'A categoria selecionada não é válida ou não existe.',
 
             'qtde_minima.integer' => 'A quantidade mínima deve ser um número inteiro.',
+            'qtde_minima.required' => 'É nessesário informar uma quantidade mínima.',
 
             'qtde_maxima.integer' => 'A quantidade máxima deve ser um número inteiro.',
-        ];
+            'qtde_maxima.required' => 'É nessesário informar uma quantidade máxima.'
+
+            ];
     }
 }

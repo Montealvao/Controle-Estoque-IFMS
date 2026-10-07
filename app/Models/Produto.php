@@ -8,7 +8,7 @@ use App\Models\Categoria;
 
 class Produto extends Model
 {
-    protected $table = 'produtos';
+    protected $table = 'produto';
 
     public function categoria(): BelongsTo
     {

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\ProdutoController;
+
 use Illuminate\Support\Facades\Route;
 
 /* ============================================================
@@ -12,6 +14,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/produtos', [ProdutoController::class, 'index'])
+    ->name('produtos.index');
+
+Route::get('/produtos/novo', [ProdutoController::class, 'create'])
+    ->name('produto.novo');
+
+Route::post('/produtos/gravar', [ProdutoController::class, 'store'])
+    ->name('produto.gravar');
+
+Route::get('/produtos/editar/{id}', [ProdutoController::class, 'edit'])
+    ->name('produto.editar');
+
+Route::put('/produtos/{id}', [ProdutoController::class, 'update'])
+    ->name('produto.atualizar');
+
+Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])
+    ->name('produto.excluir');
 
 Route::get('/fornecedores', [FornecedorController::class, 'index'])
     ->name('admin.fornecedores.index');
@@ -41,13 +60,13 @@ Route::post('/categorias', [CategoriaController::class, 'store'])
     ->name('categorias.store');
 
 Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit'])
-    ->name('categorias.edit'); 
+    ->name('categorias.edit');
 
 Route::put('/categorias/{id}', [CategoriaController::class, 'update'])
-    ->name('categorias.update');   
+    ->name('categorias.update');
 
 Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy'])
-    ->name('categorias.destroy'); 
+    ->name('categorias.destroy');
 /* ============================================================
    Área do Administrador
    ============================================================ */

@@ -1,0 +1,14 @@
+body{background:#f6f7f9;color:#14213d}
+.topo{background:#14213d}
+.lateral{width:250px;flex:none;background:#fff;border-right:1px solid #dee2e6;min-height:calc(100vh - 56px)}
+.lateral a{display:block;padding:.7rem 1.25rem;color:#14213d;text-decoration:none;border-left:4px solid transparent}
+.lateral a:hover{background:#eef1f5}
+.lateral a.ativo{background:#e3f4e8;color:#14532d;font-weight:600;border-left-color:#1f7a3e}
+.btn-success{--bs-btn-bg:#1f7a3e;--bs-btn-border-color:#1f7a3e;--bs-btn-hover-bg:#17602f;--bs-btn-hover-border-color:#17602f;--bs-btn-active-bg:#17602f}
+.btn-outline-success{--bs-btn-color:#1f7a3e;--bs-btn-border-color:#1f7a3e;--bs-btn-hover-bg:#1f7a3e;--bs-btn-hover-border-color:#1f7a3e}
+.foto{height:140px;background:#e7eaf0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#4b5563}
+.passos{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;padding:0}
+.passos li{padding:.4rem .9rem;border-radius:99px;background:#e7eaf0;color:#4b5563}
+.passos li.ativo{background:#1f7a3e;color:#fff}
+.menor{background:#e3f4e8}
+@media(max-width:991px){.lateral{width:100%;min-height:0}}
